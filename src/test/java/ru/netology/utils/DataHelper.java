@@ -1,5 +1,6 @@
-package ru.netology;
+package ru.netology.utils;
 
+import lombok.Data;
 import lombok.Value;
 
 public class DataHelper {
@@ -24,4 +25,10 @@ public class DataHelper {
     public static VerificationCode getVerificationCodeFor(AuthInfo authInfo) {
         return new VerificationCode("12345");
     }
+
+    /*@Data
+    public static class Card {
+        private String number;
+        private double balance;
+    }*/
 }
