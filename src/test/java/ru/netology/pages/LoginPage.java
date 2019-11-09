@@ -1,10 +1,12 @@
 package ru.netology.pages;
 
 import com.codeborne.selenide.SelenideElement;
+import lombok.Value;
 import ru.netology.utils.DataHelper;
 
 import static com.codeborne.selenide.Selenide.$;
 
+@Value
 public class LoginPage {
     private SelenideElement loginField = $("[data-test-id=login] input");
     private SelenideElement passwordField = $("[data-test-id=password] input");

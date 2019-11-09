@@ -2,10 +2,12 @@ package ru.netology.pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import lombok.Value;
 import ru.netology.utils.DataHelper;
 
 import static com.codeborne.selenide.Selenide.$;
 
+@Value
 public class VerificationPage {
     private SelenideElement codeField = $("[data-test-id=code] input");
     private SelenideElement verifyButton = $("[data-test-id=action-verify]");

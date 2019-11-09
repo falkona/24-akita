@@ -26,9 +26,11 @@ public class DataHelper {
         return new VerificationCode("12345");
     }
 
-    /*@Data
-    public static class Card {
-        private String number;
-        private double balance;
-    }*/
+    public static Card getCard1Info() {
+        return new Card("92df3f1c-a033-48e6-8390-206f6b1f56c0", "5559000000000001", 10000.00, "0001");
+    }
+
+    public static Card getCard2Info() {
+        return new Card("0f3f5c2a-249e-4c3d-8287-09f7a039391d", "5559000000000002", 10000.00, "0002");
+    }
 }
