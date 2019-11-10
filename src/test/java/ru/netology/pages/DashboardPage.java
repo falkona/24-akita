@@ -2,7 +2,6 @@ package ru.netology.pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import lombok.Value;
 import ru.netology.utils.Card;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -18,7 +17,7 @@ public class DashboardPage {
     public DashboardPage() {}
 
     public DashboardPage depositCardFromCard(Card cardFrom, Card cardTo, double amount) {
-        String buttonSelector = cardFrom.getId();
+        String buttonSelector = cardTo.getId();
         SelenideElement depositCardButton = $(String.format("[data-test-id='%s'] [data-test-id=action-deposit]", buttonSelector));
         depositCardButton.click();
         amountInput.shouldBe(Condition.visible);

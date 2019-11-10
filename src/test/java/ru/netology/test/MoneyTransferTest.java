@@ -18,11 +18,11 @@ public class MoneyTransferTest {
         val verificationCode = DataHelper.getVerificationCodeFor(authInfo);
         DashboardPage dashboardPage = verificationPage.validVerify(verificationCode);
 
-        Card card1 = DataHelper.getCard1Info();
-        Card card2 = DataHelper.getCard2Info();
+        Card card1 = DataHelper.getCardInfoJson(1);
+        Card card2 = DataHelper.getCardInfoJson(2);
 
-        dashboardPage.depositCardFromCard(card2, card1, 100.00);
-        Card.transferMoneyCardToCard(card2, card1, 100.00);
+        dashboardPage.depositCardFromCard(card2, card1, 100);
+        Card.transferMoneyCardToCard(card2, card1, 100);
         dashboardPage.checkBalance(card1);
         dashboardPage.checkBalance(card2);
     }
