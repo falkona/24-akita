@@ -11,8 +11,6 @@ public class DashboardPage {
     private SelenideElement transferButton = $("[data-test-id=action-transfer]");
     private SelenideElement amountInput = $("[data-test-id=amount] input");
     private SelenideElement cardFromInput = $("[data-test-id=from] input");
-    private Card card1;
-    private Card card2;
 
     public DashboardPage() {}
 
