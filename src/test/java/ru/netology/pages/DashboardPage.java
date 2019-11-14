@@ -14,12 +14,12 @@ public class DashboardPage {
 
     public DashboardPage() {}
 
-    public DashboardPage depositCardFromCard(Card cardFrom, Card cardTo, double amount) {
+    public DashboardPage depositCardFromCard(Card cardFrom, Card cardTo, int amount) {
         String buttonSelector = cardTo.getId();
         SelenideElement depositCardButton = $(String.format("[data-test-id='%s'] [data-test-id=action-deposit]", buttonSelector));
         depositCardButton.click();
         amountInput.shouldBe(Condition.visible);
-        amountInput.sendKeys(Double.toString(amount));
+        amountInput.sendKeys(Integer.toString(amount));
         cardFromInput.sendKeys(cardFrom.getNumber());
         transferButton.click();
         return new DashboardPage();
@@ -27,6 +27,6 @@ public class DashboardPage {
 
     public void checkBalance(Card card) {
         String balanceInfo = "**** **** **** %s, баланс: %s р.";
-        $(String.format("[data-test-id='%s']", card.getId())).shouldHave(Condition.exactText(String.format(balanceInfo, card.getLastSymbols(), card.getBalance())));
+        $(String.format("[data-test-id='%s']", card.getId())).shouldHave(Condition.text(String.format(balanceInfo, card.getLastSymbols(), card.getBalance())));
     }
 }

@@ -58,7 +58,7 @@ public class DataHelper {
         String cardNumberMask = jsonPathEvaluator.get(String.format("[%d].number", cardIndex - 1));
         String cardNumberFull = cardNumberMask.replaceAll("\\W+", "555900000000");
         String cardLastSymbols = cardNumberMask.replaceAll("\\W+", "");
-        double balance = Double.parseDouble(Integer.toString(jsonPathEvaluator.get(String.format("[%d].balance", cardIndex - 1))));
+        int balance = jsonPathEvaluator.get(String.format("[%d].balance", cardIndex - 1));
 
         return new Card(id, cardNumberFull, balance, cardLastSymbols);
     }
@@ -66,6 +66,12 @@ public class DataHelper {
     public static double generateRandomDouble(double max) {
         Random random = new Random();
         int num = random.nextInt((int) Math.round(max));
+        return num;
+    }
+
+    public static int generateRandomInt(int max) {
+        Random random = new Random();
+        int num = random.nextInt(max);
         return num;
     }
 }

@@ -22,7 +22,7 @@ public class MoneyTransferTest {
 
         Card cardFrom = DataHelper.getCardInfoJson(1);
         Card cardTo = DataHelper.getCardInfoJson(2);
-        double amount = DataHelper.generateRandomDouble(cardFrom.getBalance());
+        int amount = DataHelper.generateRandomInt(cardFrom.getBalance());
 
         dashboardPage.depositCardFromCard(cardFrom, cardTo, amount);
         Card.transferMoneyCardToCard(cardFrom, cardTo, amount);
